@@ -23,5 +23,5 @@ export class Service {
     let arrData = localStorage.getItem('task');
     //@ts-ignore
     return JSON.parse(arrData);
-  }
+  } 
 }
