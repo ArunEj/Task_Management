@@ -25,7 +25,6 @@ export class TaskCreateComponent implements OnInit {
                }
 
   ngOnInit(): void {
-    // localStorage.clear();
     this.createForm = this.fb.group({
       title: ['', [Validators.required]],
       date:  ['', [Validators.required]],
