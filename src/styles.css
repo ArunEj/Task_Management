@@ -100,3 +100,6 @@ body {
 .justify-content-space-around {
     justify-content: space-around;
 }
+.listTitle:hover{
+    color: #ff4081;
+}
