@@ -17,11 +17,11 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Data Management
 
-All data are maintained in your localStorage under the keyword task
-Create - localStorage.setItem()
-Delete - localStorage.removeItem()
-Update - localStorage.setItem()
-List of Data - localStorage.getItem()
+* All data are maintained in your localStorage under the keyword task
+* Create - localStorage.setItem()
+* Delete - localStorage.removeItem()
+* Update - localStorage.setItem()
+* List of Data - localStorage.getItem()
 
 ## Build
 
