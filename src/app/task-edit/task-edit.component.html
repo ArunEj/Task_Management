@@ -39,8 +39,8 @@
         <div class="row">
             <mat-label>Status: </mat-label>
             <mat-radio-group aria-label="Select an option" formControlName="status">
-                <mat-radio-button class="mar-r-10" value="false">In Progress</mat-radio-button>
-                <mat-radio-button value="true">Completed</mat-radio-button>
+                <mat-radio-button class="mar-r-10" [value]=false>In Progress</mat-radio-button>
+                <mat-radio-button [value]=true>Completed</mat-radio-button>
             </mat-radio-group>
         </div>
     </form>
