@@ -1,0 +1,48 @@
+<mat-toolbar class="mb-20">
+    <span>Task Detail</span>
+    <span class="toolbar-spacer"></span>
+    <button mat-mini-fab color="primary" class="example-icon" title="back" aria-label="Example icon-button with menu icon" (click)="back()">
+        <mat-icon>keyboard_backspace</mat-icon>
+    </button>
+</mat-toolbar>
+<mat-card class="mar-20 w-40 text-center">
+    <div class="row">
+        <div class="d-flex justify-content">
+            <label class="title color33 fWeight600 fSize15">
+                Title <span>:</span>
+            </label>
+            <p class="fWeight600 fSize15">
+                {{taskDetailObj?.title || '-'}}
+            </p>
+        </div>
+        <div class="d-flex justify-content">
+            <label class="title color33 fWeight600 fSize15">
+                Due date <span>:</span>
+            </label>
+            <p class="fWeight600 fSize15">
+                {{taskDetailObj?.date | date: 'dd/MM/yyyy'}}
+            </p>
+        </div>
+        <div class="d-flex justify-content">
+            <label class="title color33 fWeight600 fSize15">
+                Description <span>:</span>
+            </label>
+            <p class="fWeight600 fSize15">
+                {{taskDetailObj?.description || '-'}}
+            </p>
+        </div>
+        <div class="d-flex justify-content">
+            <label class="title color33 fWeight600 fSize15">
+                Status <span>:</span>
+            </label>
+            <p class="fWeight600 fSize15">
+                {{taskDetailObj?.status == 'false' ? 'In Progress' : 'Completed' || '-'}}
+            </p>
+        </div>
+    </div>
+    <div class="btn">
+        <!-- <button mat-raised-button color="warn" class="mar-r-10" (click)="delete()">Delete</button> -->
+        <button mat-raised-button class="mar-r-10 cancelBtn" (click)="back()">Cancel</button>
+        <button mat-raised-button class="greenButton" (click)="edit()"><mat-icon class="fSize20">create</mat-icon>Edit</button>
+    </div>
+</mat-card>

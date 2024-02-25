@@ -1,0 +1,41 @@
+<mat-toolbar class="mb-20">
+    <span>Create Task</span>
+    <span class="toolbar-spacer"></span>
+    <button mat-mini-fab color="primary" class="example-icon" title="back" aria-label="Example icon-button with menu icon" (click)="back()">
+        <mat-icon>keyboard_backspace</mat-icon>
+    </button>
+</mat-toolbar>
+<mat-card class="mar-20 w-40 text-center">
+    <form [formGroup]="createForm" class="container">
+        <div class="row">
+            <mat-form-field appearance="fill">
+                <mat-label>Title<span class="text-danger">*</span></mat-label>
+                <input matInput formControlName="title">
+            </mat-form-field>
+            <span *ngIf="createForm.controls.title?.errors?.required && submitted" class="text-danger d-flex">
+                Title is required
+            </span>
+        </div>
+        <div class="row date">
+            <mat-form-field appearance="fill">
+                <mat-label>Due date<span class="text-danger">*</span></mat-label>
+                <input matInput [matDatepicker]="picker" placeholder="Date" formControlName="date">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+              <span *ngIf="createForm.controls.date?.errors?.required && submitted" class="text-danger d-flex">
+                Due date is required
+            </span>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="fill">
+                <mat-label>Description</mat-label>
+                <textarea matInput formControlName="description"></textarea>
+                </mat-form-field>
+        </div>
+    </form>
+    <div class="btn">
+        <button mat-raised-button class="mar-r-10 cancelBtn" (click)="back()">Cancel</button>
+        <button mat-raised-button class="greenButton" (click)="create()"><mat-icon class="fSize20">save_alt</mat-icon>Save</button>
+    </div>
+</mat-card>

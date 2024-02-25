@@ -1,0 +1,15 @@
+<mat-toolbar class="mb-20">
+    <span>Task List</span>
+    <span class="toolbar-spacer"></span>
+    <button mat-mini-fab class="example-icon" title="Create task" aria-label="Example icon-button with menu icon" (click)="goToCreatePage()">
+        <mat-icon>add</mat-icon>
+    </button>
+</mat-toolbar>
+<div class="row mar-20" *ngIf="!taskList || taskList?.length === 0">
+    <mat-card class="text-center fSize15">
+        <strong>No Data for given period.</strong>
+    </mat-card>
+</div>
+<div *ngIf="taskList && taskList.length > 0">
+    <app-task-table [tableData]="taskList"></app-task-table>
+</div>
